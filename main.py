@@ -17,7 +17,7 @@ os.chmod(SSHPASS_PATH, 0o755)
 
 mount = [SSHPASS_PATH,
 		"-p", "alpine",
-		"ssh", "-o", "-o HostKeyAlgorithms=+ssh-rsa,ssh-dss", "-o", "PubkeyAcceptedKeyTypes=+ssh-rsa", "-p", "6414",
+		"ssh", "-o", "HostKeyAlgorithms=+ssh-rsa,ssh-dss", "-o", "PubkeyAcceptedKeyTypes=+ssh-rsa", "-p", "6414",
 		"root@127.0.0.1",
 		"mount.sh"
 ]
@@ -31,7 +31,7 @@ else:
 
 change = [SSHPASS_PATH,
 		"-p", "alpine",
-		"scp", "-o", "-o HostKeyAlgorithms=+ssh-rsa,ssh-dss", "-o", "PubkeyAcceptedKeyTypes=+ssh-rsa","-P","6414",
+		"scp", "-o", "HostKeyAlgorithms=+ssh-rsa,ssh-dss", "-o", "PubkeyAcceptedKeyTypes=+ssh-rsa","-P","6414",
 		"lockdownd",
 		"root@127.0.0.1:/mnt1/usr/libexec/lockdownd"
 ]
@@ -45,7 +45,7 @@ else:
 
 chmod = [SSHPASS_PATH,
 		"-p", "alpine",
-		"ssh", "-o", "-o HostKeyAlgorithms=+ssh-rsa,ssh-dss", "-o", "PubkeyAcceptedKeyTypes=+ssh-rsa", "-p", "6414",
+		"ssh", "-o", "HostKeyAlgorithms=+ssh-rsa,ssh-dss", "-o", "PubkeyAcceptedKeyTypes=+ssh-rsa", "-p", "6414",
 		"root@127.0.0.1",
 		"chmod 0755 /mnt1/usr/libexec/lockdownd"
 ]
@@ -59,7 +59,7 @@ else:
 
 reboot = [SSHPASS_PATH,
 		"-p", "alpine",
-		"ssh", "-o", "-o HostKeyAlgorithms=+ssh-rsa,ssh-dss", "-o", "PubkeyAcceptedKeyTypes=+ssh-rsa", "-p", "6414",
+		"ssh", "-o", "HostKeyAlgorithms=+ssh-rsa,ssh-dss", "-o", "PubkeyAcceptedKeyTypes=+ssh-rsa", "-p", "6414",
 		"root@127.0.0.1",
 		"reboot_bak"
 ]
