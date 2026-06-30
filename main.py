@@ -12,7 +12,7 @@ elif current_os == "linux":
 else:
 	print("System is not supported!")
 os.chmod(SSHPASS_PATH, 0o755)
-print(SSHPASS_PATH)
+# print(SSHPASS_PATH)
 # Defining platform and sshpass
 
 mount = [SSHPASS_PATH,
@@ -22,7 +22,7 @@ mount = [SSHPASS_PATH,
 		"mount.sh"
 ]
 mount_result = subprocess.run(mount, capture_output=True, text=True)
-print(mount_result)
+# print(mount_result)
 if mount_result.returncode == 0:
     print("Successfully mounted!")
 else:
@@ -36,7 +36,7 @@ change = [SSHPASS_PATH,
 		"root@127.0.0.1:/mnt1/usr/libexec/lockdownd"
 ]
 change_result = subprocess.run(change, cwd=BASE_DIR, capture_output=True, text=True)
-print(change_result)
+# print(change_result)
 if change_result.returncode == 0:
     print("Successfully changed!")
 else:
@@ -50,7 +50,7 @@ chmod = [SSHPASS_PATH,
 		"chmod 0755 /mnt1/usr/libexec/lockdownd"
 ]
 chmod_result = subprocess.run(chmod, capture_output=True, text=True)
-print(chmod_result)
+# print(chmod_result)
 if chmod_result.returncode == 0:
     print("Successfully chmoded!")
 else:
@@ -64,7 +64,7 @@ reboot = [SSHPASS_PATH,
 		"reboot_bak"
 ]
 reboot_result = subprocess.run(reboot, capture_output=True, text=True)
-print(reboot_result)
+# print(reboot_result)
 if reboot_result.returncode == 0:
     print("Successfully reboot!")
 else:
